@@ -14,6 +14,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
+if (MSVC)
+    add_compile_options(/W2)
+    set(PYTHON_BIN  "python")
+else()
+    add_compile_options(-Werror=return-type) #return error if function does not return a value
+    add_compile_options(-Wall -Wextra -pedantic)
+endif()
+
+
 add_executable(Example
   main.cpp
 )

@@ -155,5 +155,5 @@ int main(int argc, char *argv[])
     qDebug() << "user name: " << info.position_arg_user_name;
     /// show urls
     qDebug() << "urls: " << info.position_arg_urls;
-
+    return 0;
 }
